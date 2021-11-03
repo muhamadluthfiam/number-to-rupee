@@ -2,7 +2,7 @@
   "name": "number-to-rupee",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/NaveenDA/number-to-rupee",
+  "repository": "https://github.com/NaveenDA/number-to-rupee.git",
   "keywords": [
     "number",
     "rupee",
@@ -33,8 +33,5 @@
   },
   "prettier": {
     "trailingComma": "es5"
-  },
-  "publishConfig": {
-    "registry":"https://npm.pkg.github.com"
-  },
+  }
 }
