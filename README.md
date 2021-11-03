@@ -1,6 +1,7 @@
 # Number two Rupee
 
-Number two Rupee is javascript libary for convert number in indian rupee word.
+Number two Rupee is a javascript library for converting numbers in Indian rupee word.
+
 
 ## Installation
 
