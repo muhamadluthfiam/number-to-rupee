@@ -3,14 +3,11 @@
 name: Test the code
 on:
   push:
-    branches: [master]
+    branches: [main]
   pull_request:
-    branches: [master]
-  
+    branches: [main]
+
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    jobs:
   build:
     runs-on: ubuntu-latest
     steps:
