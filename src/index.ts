@@ -101,4 +101,19 @@ const numberTwoRupee = (num: number): string => {
   return output;
 };
 
-export default numberTwoRupee;
+/**
+ * Convert the number into Indian rupees with currency code
+ * @param num {number} Number to be converted
+ * @returns {string} Indian Rupees with currency code
+ */
+const numberToRupeesWithCode = (num: number): string => {
+  const rupeeCode = "INR";
+  const rupeeString = numberTwoRupee(num);
+  if (rupeeString) {
+    return `${rupeeString} ${rupeeCode}`;
+  } else {
+    return "";
+  }
+};
+
+export default { numberTwoRupee, numberToRupeesWithCode };
