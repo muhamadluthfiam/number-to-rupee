@@ -1,5 +1,4 @@
 const numberToWords = (num: number): string => {
-  // check the type is number or not
   if (typeof num !== "number") {
     throw new Error("Input must be a number");
   }
@@ -38,6 +37,7 @@ const numberToWords = (num: number): string => {
     "Eighty",
     "Ninety"
   ];
+
   if (num === 0) {
     return "Zero";
   }
@@ -77,43 +77,23 @@ const numberToWords = (num: number): string => {
 
   return "";
 };
+
 /**
  * Convert the number into Indian rupees
  * @param num {number} Number to be converted
- * @returns {string} Indian Rupees
+ * @param currencyFormat {string} Currency format including currency code
+ * @returns {string} Indian Rupees with currency code
  */
-const numberTwoRupee = (num: number): string => {
+const numberToRupees = (num: number, currencyFormat: string = "Rupee{s} INR"): string => {
   let output = numberToWords(num).trim();
   if (output) {
     if (num !== 0) {
-      // remove last zero
       output = output.replace(/\sZero$/, "");
     }
-    // add rupee
-    output = output + " " + "Rupee";
-    // Adding "S"
-    if (num > 1) {
-      output += "s";
-    }
-    // remove extra space
-    output = output.replace(/\s\s+/g, " ");
+    output = output + " " + currencyFormat.replace("{s}", num > 1 ? "s" : "");
+    output = output.replace(/\s+/g, " ");
   }
   return output;
 };
 
-/**
- * Convert the number into Indian rupees with currency code
- * @param num {number} Number to be converted
- * @returns {string} Indian Rupees with currency code
- */
-const numberToRupeesWithCode = (num: number): string => {
-  const rupeeCode = "INR";
-  const rupeeString = numberTwoRupee(num);
-  if (rupeeString) {
-    return `${rupeeString} ${rupeeCode}`;
-  } else {
-    return "";
-  }
-};
-
-export default { numberTwoRupee, numberToRupeesWithCode };
+export default numberToRupees;
